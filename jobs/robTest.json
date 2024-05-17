@@ -1,0 +1,30 @@
+{
+  "source": "PRD",
+  "target": "DEV2",
+  "data": [{
+      "operation": "refresh",
+      "type": "sobject",
+      "object": "Account",
+      "primaryKey": "Id",
+      "externalId": "Legacy_ID__c",
+      "fields": ["Name", "LastName", "FirstName", "Salutation", "MiddleName", "Suffix", "Type", "ParentId", "BillingStreet", "BillingCity", "BillingState", "BillingPostalCode", "BillingCountry", "BillingLatitude", "BillingLongitude", "BillingGeocodeAccuracy", "ShippingStreet", "ShippingCity", "ShippingState", "ShippingPostalCode", "ShippingCountry", "ShippingLatitude", "ShippingLongitude", "ShippingGeocodeAccuracy", "Phone", "Fax", "AccountNumber", "Website", "Sic", "Industry", "AnnualRevenue", "NumberOfEmployees", "Ownership", "TickerSymbol", "Description", "Rating", "Site", "EIN__c", "Fiscal_Year_End__c"],
+      "where": "Legacy_ID__c != null",
+      "orderby": "",
+      "limit": 0,
+      "relationships": [{
+        "object": "Account",
+        "relationshipName": "Parent",
+        "field": "ParentId",
+        "externalId": "Legacy_ID__c"
+      },{
+        "object": "User",
+        "relationshipName": "Owner",
+        "field": "OwnerId",
+        "externalId": "Pentegra_ID__c"
+      }],
+      "masks": {
+        "EIN__c": "fake.ein"
+      }
+    }
+  ]
+}

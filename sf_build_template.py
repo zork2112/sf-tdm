@@ -121,7 +121,11 @@ def get_object_data(source_org, obj_list, fields=None):
 if __name__ == '__main__':
     h.setup_logging()
     results = create_template(source_org='./config/prs.prd.json',
-                              operations_list='./data/control-list.json',
-                              output=f'./output/{h.datestamp()}.json',
+                              operations_list='./job/robTest.json',
+                              output=f'./output/{h.datestamp()}.json'
                               ext_id_file='./data/ext-id.json')
+#    results = create_template(source_org='./config/prs.prd.json',
+#                              operations_list='./data/control-list.json',
+#                              output=f'./output/{h.datestamp()}.json',
+#                              ext_id_file='./data/ext-id.json')
     log.info(f'{results}\n')
